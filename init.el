@@ -16,7 +16,7 @@
 (setq load-path (cons  "/usr/lib/erlang/lib/tools-3.3/emacs" load-path))
 (setq erlang-root-dir "/usr/lib/erlang")
 (setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
-(require 'erlang-start)
+;(require 'erlang-start)
 
 ;; Highlght parens using rainbow colors in every programming mode
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -30,9 +30,13 @@
 	      c-basic-offset 4)
 
 ;; Remap some keys
-(global-set-key (kbd "<f1>") 'delete-other-windows)
-(global-set-key (kbd "<f2>") 'compile)
-(global-set-key (kbd "<f3>") 'next-error)
+(global-set-key (kbd "<f3>") 'shell)
+(global-set-key (kbd "<f6>") 'org-babel-tangle)
+(global-set-key (kbd "<f9>") 'previous-multiframe-window)
+(global-set-key (kbd "<f10>") 'next-multiframe-window)
+
+(fset 'foo "\C-x3\C-xo\C-x2\C-xo\C-xo")
+(global-set-key (kbd "<f12>") 'foo)
 
 ;; For slime
 (setq inferior-lisp-program "~/opt/ecl-16.1.3/bin/ecl")
